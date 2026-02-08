@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Blog Django</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'article_list' %}">Accueil</a> |
+        <a href="{% url 'article_form' %}">Créer un article</a>
+    </nav>
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,14 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+<h1>{{ article.titre }}</h1>
+<p>Publié le : {{ article.date_creation|date:"d/m/Y à H:i" }}</p>
+<div style="background:#f9f9f9; padding:15px; border-left:4px solid #ccc;">
+    {{ article.contenu|linebreaks }}
+</div>
+<p>
+    <a href="{% url 'article_list' %}">← Retour</a>
+    | <a href="{% url 'article_update' article.id %}">Modifier</a>
+    | <a href="{% url 'article_delete' article.id %}">Supprimer</a>
+</p>
+{% endblock %}

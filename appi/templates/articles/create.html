@@ -1,0 +1,10 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+<h1>Création d'article</h1>
+<p>{{ message }}</p>
+<p>
+    <a href="{% url 'article_form' %}">Créer un autre article</a>
+    | <a href="{% url 'article_list' %}">Voir tous les articles</a>
+</p>
+{% endblock %}
