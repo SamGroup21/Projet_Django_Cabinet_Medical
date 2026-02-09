@@ -1,0 +1,18 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+<h1>Suppression d'article</h1>
+
+{% if message %}
+    <p>{{ message }}</p>
+{% else %}
+    <p>Voulez-vous vraiment supprimer cet article ?</p>
+    <p>
+        <a href="?confirm=oui" style="color:red; font-weight:bold;">Oui, supprimer</a>
+        |
+        <a href="{% url 'article_detail' article.id %}">Non, annuler</a>
+    </p>
+{% endif %}
+
+<p><a href="{% url 'article_list' %}">Retour à la liste</a></p>
+{% endblock %}

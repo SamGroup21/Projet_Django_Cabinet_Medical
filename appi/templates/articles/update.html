@@ -1,0 +1,24 @@
+{% extends 'articles/base.html' %}
+
+{% block content %}
+<h1>Modifier l'article</h1>
+
+<h2>Formulaire de modification</h2>
+<form action="" method="get">
+    <p>
+        <label for="titre">Titre :</label><br>
+        <input type="text" id="titre" name="titre" value="{{ article.titre }}" required>
+    </p>
+    <p>
+        <label for="contenu">Contenu :</label><br>
+        <textarea id="contenu" name="contenu" rows="5" required>{{ article.contenu }}</textarea>
+    </p>
+    <button type="submit">Modifier</button>
+</form>
+
+{% if message %}
+    <p style="color:green;">{{ message }}</p>
+{% endif %}
+
+<p><a href="{% url 'article_detail' article.id %}">← Retour à l'article</a></p>
+{% endblock %}
